@@ -28,8 +28,7 @@ class Niche(NicheBase):
     user_id: Optional[int] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 class LeadBase(BaseModel):
     niche_id: int
@@ -56,8 +55,7 @@ class Lead(LeadBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 class MessageBase(BaseModel):
     lead_id: int
@@ -76,5 +74,4 @@ class Message(MessageBase):
     failed_reason: Optional[str] = None
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
